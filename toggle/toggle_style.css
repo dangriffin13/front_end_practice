@@ -1,0 +1,102 @@
+body > div {
+height: 100px;
+width: 100px;
+border: 1px;
+border-style: dotted;
+border-color: black;
+text-align: center;
+vertical-align: middle;
+line-height: 100px;
+position
+}
+
+.one{
+display: inline-block;
+}
+
+
+.two {
+height: 50px;
+line-height: 50px;
+display: inline-block;
+}
+
+
+.three{
+display: inline-block;
+}
+
+.contain-btn{
+    display: inline-block;
+    text-align: center;
+}
+
+.button {
+position: relative;
+top: 50%;
+margin: -18px 0px;
+margin-left: 5px;
+vertical-align: middle;
+height: 25px;
+width: 90%;
+line-height: 25px;
+border-radius: 20px;
+box-shadow: 2px 2px 2px;
+background-color: aliceblue;
+
+}
+
+.button:hover {
+background-color: #D3D3D3;
+}
+
+.five{
+    position: relative;
+    text-align: center;
+}
+
+
+/* wrapper div is positioned absolute to container to allow for left justify while children of wrapper are inline-block, which absolute positioning doesn't allow */
+.five-box-ctn{
+    position: absolute;
+    top: 0;
+    left: 1px;
+    width: 100%;
+    height: inherit;
+    text-align: left;
+}
+
+/* test is placed after boxes in html dom so that its z-index defaults to a higher one */
+.five-text{
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.five-offset{
+    position: absolute;
+    top: 0;
+    left: 100px;
+    height: inherit;
+    width: 150px;
+}
+
+.toggle-shading-btn {
+    position: relative;
+    left: 5px;
+}
+
+.shaded-box{
+    position: relative;
+    display: inline-block;
+    /* background-color: #D3D3D3; */
+    border: 1px;
+    border-style: dotted;
+    border-color: black;
+    width: 31%; /* Looks like the borders add to the width, so size needs to be slightly less than 33% */
+    height: 50%;
+}
+
+.grayed{
+    background-color: #D3D3D3;
+}
