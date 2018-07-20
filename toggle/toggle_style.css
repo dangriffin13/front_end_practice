@@ -19,8 +19,16 @@ display: inline-block;
 height: 50px;
 line-height: 50px;
 display: inline-block;
+visibility: visible;
 }
 
+.hide{
+    visibility: hidden;
+}
+
+.set-none{
+    display: none;
+}
 
 .three{
 display: inline-block;
