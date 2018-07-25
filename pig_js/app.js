@@ -26,28 +26,17 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
         diceDOM.style.display = 'block';
         diceDOM.src = 'dice-' + dice + '.png';
 
-        switch (true) {
-            case dice == 6 & lastRoll == 6:
-                //total score goes to zero and end turn
-                scores[activePlayer] = 0;
-                document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
-                endTurn();
-            case dice == 6:
-                lastRoll = 6;
-            case dice == 1:
-                endTurn();
-            default:
-                roundScore += dice
-                document.querySelector('#current-' + activePlayer).textContent = roundScore
-        }
-
-        //update score if not a one, else end turn
-        if (dice !== 1) {
-            roundScore += dice;
-            document.querySelector('#current-' + activePlayer).textContent = roundScore
+        if (dice == 6 && lastRoll == 6) {
+            scores[activePlayer] = 0;
+            document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+            endTurn();
+        } else if (dice == 1) {
+            endTurn();
         } else {
-            endTurn()
-        };
+            lastRoll = dice
+            roundScore += dice;
+            document.querySelector('#current-' + activePlayer).textContent = roundScore;
+            };
     };
 
 });
