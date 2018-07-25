@@ -9,6 +9,24 @@
     
 }
 
+.winning-score {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 520px;
+    text-align: center;
+    font-family: 'Lato';
+    color: #555;
+    font-size: 18px;
+    width: 180px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.winning-score:focus {
+    outline: none;
+}
+
 .clearfix::after {
     content: "";
     display: table;
