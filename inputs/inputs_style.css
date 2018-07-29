@@ -2,9 +2,12 @@
 
 body {
     height: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 
 .input-wrapper {
+position: relative;
 width: 100%;
 height: 100%;
 text-align: center;
@@ -28,3 +31,18 @@ text-align: center;
 input:focus::-moz-placeholder {color: transparent;}
 /*Chrome/Safari*/
 input:focus::-webkit-input-placeholder {color: transparent;}
+
+.height-measure{
+    height: 50%;
+    width: 50%;
+}
+
+.top{
+    position: absolute;
+    top: 0px;
+}
+
+.bottom{
+    position: absolute;
+    bottom: 0px;
+}
