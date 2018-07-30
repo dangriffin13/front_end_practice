@@ -15,9 +15,19 @@ text-align: center;
 
 #helloworld {
 background-color: #F0F0F0;
-position: relative;
+position: absolute;
 top: 50%;
-transform: translateY(-50%);
+transform: translate(-50%, -50%);
+height: 25px;
+width: 200px;
+text-align: center;
+}
+
+#seventy-five {
+background-color: #F0F0F0;
+position: absolute;
+top: 75%;
+transform: translate(-50%, -50%);
 height: 25px;
 width: 200px;
 text-align: center;
@@ -35,14 +45,14 @@ input:focus::-webkit-input-placeholder {color: transparent;}
 .height-measure{
     height: 50%;
     width: 50%;
+    position: absolute;
 }
 
 .top{
-    position: absolute;
     top: 0px;
 }
 
+
 .bottom{
-    position: absolute;
     bottom: 0px;
 }
