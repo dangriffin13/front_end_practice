@@ -13,7 +13,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 520px;
+    top: 485px;
     text-align: center;
     font-family: 'Lato';
     color: #555;
@@ -25,6 +25,34 @@
 
 .winning-score:focus {
     outline: none;
+}
+
+.winning-score-submit {
+    color: #fff;
+    background-color: green;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 550px;
+    width: 140px;
+    padding: 5px;
+    font-family: 'Lato';
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.winning-score-warning {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    top: 585px;
+    color: #B22222;
+    font-family: 'Lato';
+    font-size: 14px;
+    text-align: center;
+
+    visibility: hidden;
 }
 
 .clearfix::after {
@@ -59,7 +87,7 @@ body {
 .player-1-panel {
     width: 50%;
     float: left;
-    height: 600px;
+    height: 610px;
     padding: 100px;
 }
 
@@ -156,8 +184,8 @@ i {
 }
 
 .btn-new { top: 45px;}
-.btn-roll { top: 403px;}
-.btn-hold { top: 467px;}
+.btn-roll { top: 375px;}
+.btn-hold { top: 435px;}
 
 .dice {
     position: absolute;
