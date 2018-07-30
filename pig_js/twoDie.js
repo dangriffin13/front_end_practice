@@ -8,21 +8,12 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 
 */
-var scores, roundScore, activePlayer, dice, gamePlaying, winningScore;
+var scores, roundScore, activePlayer, dice, gamePlaying, winningScore, noScore;
 
 initGame();
 
 
-
-var input = document.querySelector('.winning-score').value;
-
-if (input) {
-    winningScore = input;
-} else {
-    winningScore = 100;
-}
-
-document.querySelector('.dice').style.display = 'none';
+//document.querySelector('.dice').style.display = 'none';
 
 //anonymous function
 document.querySelector('.btn-roll').addEventListener('click', function () {
@@ -77,9 +68,11 @@ function initGame() {
     scores = [0,0];
     roundScore = 0;
     activePlayer = 0;
-    gamePlaying = true;
 
     document.querySelector('.dice').style.display = 'none';
+    document.querySelector('.winning-score').readOnly = false;
+    document.querySelector('.winning-score').style.backgroundColor = 'white';
+    document.querySelector('.winning-score-submit').visibility = 'visible';
 
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
@@ -93,7 +86,46 @@ function initGame() {
     document.querySelector('.player-1-panel').classList.remove('active');
 
     document.querySelector('.player-0-panel').classList.add('active');
+
+    //setWinScore();
+    gamePlaying = true;
 }
+
+function setWinScore () {
+    var input = document.querySelector('.winning-score').value;
+    var noScore = true
+
+    while (noScore) {
+
+        document.querySelector('.btn-hold').addEventListener('click', function(){
+            document.querySelector('.winning-score-warning').textContent = 'You must enter a score to play to.';
+            document.querySelector('.winning-score-warning').visibility = 'visible';
+        });
+
+        document.querySelector('.btn-roll').addEventListener('click', function () {
+            document.querySelector('.winning-score-warning').textContent = 'You must enter a score to play to.';
+            document.querySelector('.winning-score-warning').visibility = 'visible';
+        });
+
+        document.querySelector('.winning-score-submit').addEventListener('click', function () {
+            var input = document.querySelector('.winning-score').value;
+
+            if (input === parseInt(input, 10)) {
+                document.querySelector('.winning-score').style.backgroundColor = '#778899';
+                winningScore = input;
+                noScore = false;
+                document.querySelector('.winning-score-warning').visibility = 'hidden';
+                document.querySelector('.winning-score-submit').visibility = 'hidden';
+                document.querySelector('.winning-score').readOnly = 'true';
+            } else {
+                document.querySelector('.winning-score-warning').textContent = 'You must enter a round number.';
+                document.querySelector('.winning-score-warning').visibility = 'visible';
+            };
+        });
+    };
+};
+
+
 
 
 function endTurn() {
