@@ -18,9 +18,13 @@
     font-family: 'Lato';
     color: #555;
     font-size: 18px;
-    width: 180px;
+    width: 195px;
     padding: 10px;
     text-transform: uppercase;
+}
+
+.winning-score::-webkit-input-placeholder { 
+  font-size: 12px;
 }
 
 .winning-score:focus {
@@ -184,8 +188,15 @@ i {
 }
 
 .btn-new { top: 45px;}
-.btn-roll { top: 375px;}
-.btn-hold { top: 435px;}
+
+.btn-roll { 
+    top: 375px;
+    visibility: hidden;
+}
+.btn-hold { 
+    top: 435px;
+    visibility: hidden;
+}
 
 .dice {
     position: absolute;
