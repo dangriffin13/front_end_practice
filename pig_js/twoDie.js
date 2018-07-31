@@ -8,7 +8,9 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 
 */
-var scores, roundScore, activePlayer, dice, gamePlaying, winningScore, noScore;
+var scores, roundScore, activePlayer, dice, gamePlaying, winningScore;
+
+document.querySelector('.btn-new').addEventListener('click', initGame);
 
 initGame();
 
@@ -16,6 +18,7 @@ initGame();
 //document.querySelector('.dice').style.display = 'none';
 
 //anonymous function
+//roll button functionality
 document.querySelector('.btn-roll').addEventListener('click', function () {
     if (gamePlaying) {
         //generate number
@@ -40,6 +43,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
 
 });
 
+//hold button functionality
 document.querySelector('.btn-hold').addEventListener('click', function() {
     if (gamePlaying) {
         //add round score to player's global score
@@ -61,18 +65,40 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     };
 });
 
-document.querySelector('.btn-new').addEventListener('click', initGame);
+//submit winning score functionality
+document.querySelector('.winning-score-submit').addEventListener('click', function () {
+        console.log('clicked on submit');
+        var input = document.querySelector('.winning-score').value;
+        console.log('input: ', input, typeof input);
+        if (input == parseInt(input, 10)) {
+            document.querySelector('.winning-score').style.backgroundColor = '#778899';
+            winningScore = parseInt(input, 10);
+            document.querySelector('.winning-score-warning').style.visibility = 'hidden';
+            document.querySelector('.winning-score-submit').style.visibility = 'hidden';
+            document.querySelector('.winning-score').readOnly = 'true';
+            document.querySelector('.btn-hold').style.visibility = 'visible'
+            document.querySelector('.btn-roll').style.visibility = 'visible'
+        } else {
+            console.log('Input else actions');
+            document.querySelector('.winning-score-warning').textContent = 'You must enter a round number.';
+            document.querySelector('.winning-score-warning').style.visibility = 'visible';
+        };
+    });
 
 
 function initGame() {
     scores = [0,0];
     roundScore = 0;
     activePlayer = 0;
+    gamePlaying = true;
 
     document.querySelector('.dice').style.display = 'none';
     document.querySelector('.winning-score').readOnly = false;
+    document.querySelector('.winning-score').value = "";
     document.querySelector('.winning-score').style.backgroundColor = 'white';
-    document.querySelector('.winning-score-submit').visibility = 'visible';
+    document.querySelector('.winning-score-submit').style.visibility = 'visible';
+    document.querySelector('.btn-hold').style.visibility = 'hidden'
+    document.querySelector('.btn-roll').style.visibility = 'hidden'
 
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
@@ -86,43 +112,6 @@ function initGame() {
     document.querySelector('.player-1-panel').classList.remove('active');
 
     document.querySelector('.player-0-panel').classList.add('active');
-
-    //setWinScore();
-    gamePlaying = true;
-}
-
-function setWinScore () {
-    var input = document.querySelector('.winning-score').value;
-    var noScore = true
-
-    while (noScore) {
-
-        document.querySelector('.btn-hold').addEventListener('click', function(){
-            document.querySelector('.winning-score-warning').textContent = 'You must enter a score to play to.';
-            document.querySelector('.winning-score-warning').visibility = 'visible';
-        });
-
-        document.querySelector('.btn-roll').addEventListener('click', function () {
-            document.querySelector('.winning-score-warning').textContent = 'You must enter a score to play to.';
-            document.querySelector('.winning-score-warning').visibility = 'visible';
-        });
-
-        document.querySelector('.winning-score-submit').addEventListener('click', function () {
-            var input = document.querySelector('.winning-score').value;
-
-            if (input === parseInt(input, 10)) {
-                document.querySelector('.winning-score').style.backgroundColor = '#778899';
-                winningScore = input;
-                noScore = false;
-                document.querySelector('.winning-score-warning').visibility = 'hidden';
-                document.querySelector('.winning-score-submit').visibility = 'hidden';
-                document.querySelector('.winning-score').readOnly = 'true';
-            } else {
-                document.querySelector('.winning-score-warning').textContent = 'You must enter a round number.';
-                document.querySelector('.winning-score-warning').visibility = 'visible';
-            };
-        });
-    };
 };
 
 
@@ -137,4 +126,4 @@ function endTurn() {
 
         document.querySelector('.player-0-panel').classList.toggle('active');
         document.querySelector('.player-1-panel').classList.toggle('active');
-}
+};
