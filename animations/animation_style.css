@@ -13,7 +13,7 @@ body {
 
 /* Logo sliding in from top left */
 #logo-wrapper {
-    position: relative;
+    position: absolute;
     top: 10px;
     left: 10px;
     margin-right: 10px;
@@ -93,6 +93,23 @@ body {
 
 /* Button moves up on hover */
 
+.top-span {
+    position: relative;
+    height: 140px;
+    width: 100%;
+    text-align: center;
+}
+
+/*
+.con-explore-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -70px -70px;
+    text-align: center;
+}
+*/
+
 .btn:link,
 .btn:visited {
     text-transform: uppercase;
@@ -104,13 +121,21 @@ body {
     transition: all .2s;
 }
 
-.btn-gray {
-    color: black;
-    background-color: #777;
+.btn-brown {
+    margin-top: 45px;
+    color: white;
+    background-color: #665600;
+    background-image: linear-gradient(to bottom, #665600, #4c4000);
 }
 
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0,0,0,.3);
 }
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 5px rgba(0,0,0,.3);
+}
+
 
