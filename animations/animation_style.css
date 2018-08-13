@@ -13,9 +13,11 @@ body {
 
 /* Logo sliding in from top left */
 #logo-wrapper {
-    position: fixed;
+    position: relative;
     top: 10px;
     left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 
     animation-name: moveInLeft;
     animation-duration: 1.5s
@@ -105,5 +107,10 @@ body {
 .btn-gray {
     color: black;
     background-color: #777;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.3);
 }
 
