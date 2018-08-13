@@ -11,6 +11,7 @@ body {
     position: relative;
 }
 
+/* Logo sliding in from top left */
 #logo-wrapper {
     position: fixed;
     top: 10px;
@@ -19,6 +20,20 @@ body {
     animation-name: moveInLeft;
     animation-duration: 1.5s
 }
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-75px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/*Burger top right converts to X on hover */
 
 .burger-wrapper {
     width: 45px;
@@ -74,16 +89,21 @@ body {
    transition: all .2s ease;
  }
 
+/* Button moves up on hover */
 
-
-@keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-75px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    position: relative;
+    border-radius: 100px;
+    transition: all .2s;
 }
+
+.btn-gray {
+    color: black;
+    background-color: #777;
+}
+
