@@ -37,32 +37,41 @@ body {
     margin-bottom: 6px;
 }
 
-.burg-bar {
-   -webkit-transition: all .7s ease;
-   -moz-transition: all .7s ease;
-   -ms-transition: all .7s ease;
-   -o-transition: all .7s ease;
-   transition: all .7s ease;
+.burg-top,
+.burg-bottom {
+   -webkit-transition: all .5s ease;
+   -moz-transition: all .5s ease;
+   -ms-transition: all .5s ease;
+   -o-transition: all .5s ease;
+   transition: all .5s ease;
  }
 
 .burger-wrapper:hover .burg-top {
-   -webkit-transform: translateY(15px) rotateZ(45deg);
-   -moz-transform: translateY(15px) rotateZ(45deg);
-   -ms-transform: translateY(15px) rotateZ(45deg);
-   -o-transform: translateY(15px) rotateZ(45deg);
-   transform: translateY(15px) rotateZ(45deg);
+   -webkit-transform: translateY(12px) rotateZ(45deg);
+   -moz-transform: translateY(12px) rotateZ(45deg);
+   -ms-transform: translateY(12px) rotateZ(45deg);
+   -o-transform: translateY(12px) rotateZ(45deg);
+   transform: translateY(12px) rotateZ(45deg);
  }
  
  .burger-wrapper:hover .burg-bottom {
-   -webkit-transform: translateY(-15px) rotateZ(-45deg);
-   -moz-transform: translateY(-15px) rotateZ(-45deg);
-   -ms-transform: translateY(-15px) rotateZ(-45deg);
-   -o-transform: translateY(-15px) rotateZ(-45deg);
-   transform: translateY(-15px) rotateZ(-45deg);
+   -webkit-transform: translateY(-12px) rotateZ(-45deg);
+   -moz-transform: translateY(-12px) rotateZ(-45deg);
+   -ms-transform: translateY(-12px) rotateZ(-45deg);
+   -o-transform: translateY(-12px) rotateZ(-45deg);
+   transform: translateY(-12px) rotateZ(-45deg);
  }
  
  .burger-wrapper:hover .burg-middle {
    width: 0;
+ }
+
+.burg-middle {
+   -webkit-transition: all .2s ease;
+   -moz-transition: all .2s ease;
+   -ms-transition: all .2s ease;
+   -o-transition: all .2s ease;
+   transition: all .2s ease;
  }
 
 
